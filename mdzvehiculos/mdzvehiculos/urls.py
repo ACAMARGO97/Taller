@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.mantenimiento.views import home
+from apps.vehiculos.views import home
 
 
 urlpatterns = [
     path('/', home, name='home'),
     path('admin/', admin.site.urls),
-    #path('vehiculos/', include('apps.vehiculos.urls', namespace='vehiculos')),
-    path('mantenimiento/', include('apps.mantenimiento.urls', namespace='mantenimiento')),
-    #path('ventas/', include('apps.ventas.urls', namespace='ventas')),
+    path('vehiculos/', include('apps.vehiculos.urls', namespace='vehiculos')),
+    #path('mantenimiento/', include('apps.mantenimiento.urls', namespace='mantenimiento')),
+    path('ventas/', include('apps.ventas.urls', namespace='ventas')),
+    path('marcas/', include('apps.vehiculos.urls', namespace='marcas')),
+    path('tipovehiculos/', include('apps.vehiculos.urls', namespace='tipovehiculos')),
 
 ]

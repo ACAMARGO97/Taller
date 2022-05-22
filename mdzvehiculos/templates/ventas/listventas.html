@@ -1,4 +1,4 @@
-<!--{% extends 'base/base.html' %}
+{% extends 'base/base.html' %}
 
 {% block content %}
 
@@ -22,19 +22,31 @@
             <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">fecha</th>
-                <th scope="col">valortotal</th>
-                <th scope="col">tipopago</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Valor Total</th>
+                <th scope="col">Tipos de Pago</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Vehiculos</th>
             </tr>
             </thead>
             <tbody>
-                {% if Ventas %}
-                    {% for venta in Ventas %}
+                {% if ventas %}
+                    {% for venta in ventas %}
                         <tr>
-                            <td>{{ Venta.id }}</td>
-                            <td>{{ Venta.fecha }}</td>
-                            <td>{{ Venta.valortotal }}</td>
-                            <td>{{ Venta.tipopago }}</td>
+                            <td>{{ venta.id }}</td>
+                            <td>{{ venta.fecha }}</td>
+                            <td>{{ venta.valorTotal }}</td>
+                            <td>{{ venta.tipoPago }}</td>
+                            <td>{{ venta.user }}</td>
+                            <td>{{ venta.vehiculo.extra.first }}</td>
+                            <td>
+                                <a href="{% url 'ventas:ventasUpdate' venta.id %}" class="btn btn-warning">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="{% url 'ventas:ventasDelete' venta.id %}" class="btn btn-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                 {% else %}
@@ -43,4 +55,4 @@
             </tbody>
         </table>
 
-{% endblock %} -->
+{% endblock %}

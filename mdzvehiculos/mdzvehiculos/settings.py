@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.equipo.apps.EquipoConfig',
-    'apps.mantenimiento.apps.MantenimientoConfig',
+    'apps.vehiculos.apps.VehiculosConfig',
+    'apps.ventas.apps.VentasConfig',
 
 ]
 
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'mdzvehiculos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_mantenimiento',
+        'NAME': 'db_ventavehiculos',
         'USER': 'mdz',
         'PASSWORD': 'Mdz981202@',
         'HOST': 'localhost',

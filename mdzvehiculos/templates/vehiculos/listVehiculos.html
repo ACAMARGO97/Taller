@@ -28,6 +28,7 @@
                 <th scope="col">Motor</th>
                 <th scope="col">Marca</th>
                 <th scope="col">Tipo Vehiculo</th>
+               
             </tr>
             </thead>
             <tbody>
@@ -41,7 +42,14 @@
                             <td>{{ vehiculo.motor }}</td>
                             <td>{{ vehiculo.marca }}</td>
                             <td>{{ vehiculo.tipovehiculo }}</td>
-
+                            <td>
+                                <a href="{% url 'vehiculos:vehiculosUpdate' vehiculo.id %}" class="btn btn-warning">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="{% url 'vehiculos:vehiculosDelete' vehiculo.id %}" class="btn btn-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                     {% endfor %}
                 {% else %}
