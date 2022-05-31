@@ -1,0 +1,31 @@
+<div class="container">
+    <form {formGroup}="formulario" novalidate (ngSubmit)="onSubmit()">
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fecha de venta</mat-label>
+                <input matInput placeholder="fechaVenta" formControlName="fechaVenta" required>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Valor Total</mat-label>
+                <input matInput placeholder="valorTotal" formControlName="valorTotal" required>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Tipo Pago</mat-label>
+                <input matInput placeholder="tipoPago" formControlName="tipoPago" required>
+              </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="legacy">
+                <mat-label>Usuario Id</mat-label>
+                <input matInput placeholder="usuarioId" formControlName="usuarioId" required>
+              </mat-form-field>
+        </div>
+        <div>
+            <button type="submit" mat-raised-button [disabled]="formulario.invalid">Crear Venta</button>
+        </div>
+    </form>
+</div>
